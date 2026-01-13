@@ -18,7 +18,8 @@ The system demonstrates enterprise-level full-stack design, ETL pipelines,
 and Agile team collaboration.
 
 ## High-Level Architecture
- Architecture Diagram: Good drive -  [-https://drive.google.com/file/d/1goYUlZVnnQKxRoBbOAGn26IHWoS1l4j5/view?usp=sharing(https://drive.google.com/file/d/1goYUlZVnnQKxRoBbOAGn26IHWoS1l4j5/view?usp=sharing) 
+ Architecture Diagram: Good drive -  [-https://drive.google.com/file/d/1goYUlZVnnQKxRoBbOAGn26IHWoS1l4j5/view?usp=sharing
+ 
  Draw.io diagram - https://app.diagrams.net/#G1goYUlZVnnQKxRoBbOAGn26IHWoS1l4j5#%7B%22pageId%22%3A%221mXU8WjYzTvYKboij3Fc%22%7D
 
 ## Scrum Board
