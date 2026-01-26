@@ -247,6 +247,7 @@ WHERE t.transaction_id = 1;
 
 ---
 
+<<<<<<< HEAD
 
 ### 6. Transaction with Embedded Category
 **SQL Sources:** `transactions`, `transaction_categories` tables (JOIN)
@@ -348,6 +349,8 @@ WHERE t.transaction_id = 1;
 
 
 
+=======
+>>>>>>> 558925ddade7c50b52dbfb3250c02be2e2a7c170
 ## API Response Examples
 
 ### 8. Transaction List Response
@@ -496,7 +499,10 @@ WHERE sender_id = 1 OR receiver_id = 1;
 
 ---
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 558925ddade7c50b52dbfb3250c02be2e2a7c170
 ## Summary
 
 This documentation provides a complete reference for all JSON schema entities used throughout the Momo system, including:
