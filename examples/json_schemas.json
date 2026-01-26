@@ -1,0 +1,182 @@
+[
+  {
+    "_comment": "A user with their basic info",
+    "user_id": 1,
+    "user_phone_number": "*********567",
+    "user_name": "John Mukasa"
+  },
+  {
+    "_comment": "Type of transaction (e.g., Money Transfer)",
+    "category_id": 1,
+    "category_type": "Money Transfer"
+  },
+  {
+    "_comment": "A simple transaction record",
+    "transaction_id": 1,
+    "sender_id": 1,
+    "receiver_id": 2,
+    "amount": 50000.00,
+    "category_id": 1,
+    "transaction_time": "2025-01-15T10:30:00Z"
+  },
+  {
+    "_comment": "Activity log entry for a transaction",
+    "log_id": 1,
+    "action": "Transaction Processed",
+    "timestamp": "2025-01-15T10:30:05Z",
+    "transaction_id": 1,
+    "category_id": 1
+  },
+  {
+    "_comment": "User profile with their allowed transaction categories",
+    "user_id": 1,
+    "user_phone_number": "*********567",
+    "user_name": "John Mukasa",
+    "categories": [
+      {
+        "category_id": 1,
+        "category_type": "Money Transfer"
+      },
+      {
+        "category_id": 2,
+        "category_type": "Airtime Purchase"
+      }
+    ]
+  },
+  {
+    "_comment": "Transaction that includes its category details inline",
+    "transaction_id": 1,
+    "sender_id": 1,
+    "receiver_id": 2,
+    "amount": 50000.00,
+    "transaction_time": "2025-01-15T10:30:00Z",
+    "category": {
+      "category_id": 1,
+      "category_type": "Money Transfer"
+    }
+  },
+  {
+    "_comment": "Full transaction details with sender, receiver, category, and activity logs",
+    "transaction_id": 1,
+    "amount": 50000.00,
+    "transaction_time": "2025-01-15T10:30:00Z",
+    "sender": {
+      "user_id": 1,
+      "user_phone_number": "*********567",
+      "user_name": "John Mukasa"
+    },
+    "receiver": {
+      "user_id": 2,
+      "user_phone_number": "*********667",
+      "user_name": "Sarah Nakato"
+    },
+    "category": {
+      "category_id": 1,
+      "category_type": "Money Transfer"
+    },
+    "logs": [
+      {
+        "log_id": 1,
+        "action": "Transaction Processed",
+        "timestamp": "2025-01-15T10:30:05Z"
+      }
+    ]
+  },
+  {
+    "_comment": "List of transactions with pagination info",
+    "status": "success",
+    "count": 3,
+    "page": 1,
+    "total_pages": 1,
+    "transactions": [
+      {
+        "transaction_id": 1,
+        "amount": 50000.00,
+        "transaction_time": "2025-01-15T10:30:00Z",
+        "sender": {
+          "user_id": 1,
+          "user_name": "John Mukasa"
+        },
+        "receiver": {
+          "user_id": 2,
+          "user_name": "Sarah Nakato"
+        },
+        "category": {
+          "category_type": "Money Transfer"
+        }
+      },
+      {
+        "transaction_id": 2,
+        "amount": 25000.00,
+        "transaction_time": "2025-01-15T14:20:00Z",
+        "sender": {
+          "user_id": 2,
+          "user_name": "Sarah Nakato"
+        },
+        "receiver": {
+          "user_id": 3,
+          "user_name": "Peter Ochieng"
+        },
+        "category": {
+          "category_type": "Money Transfer"
+        }
+      },
+      {
+        "transaction_id": 3,
+        "amount": 10000.00,
+        "transaction_time": "2025-01-16T09:15:00Z",
+        "sender": {
+          "user_id": 3,
+          "user_name": "Peter Ochieng"
+        },
+        "receiver": {
+          "user_id": 4,
+          "user_name": "Mary Achieng"
+        },
+        "category": {
+          "category_type": "Money Transfer"
+        }
+      }
+    ]
+  },
+  {
+    "_comment": "User's wallet history showing sent and received transactions with a summary",
+    "status": "success",
+    "user": {
+      "user_id": 1,
+      "user_phone_number": "*********567",
+      "user_name": "John Mukasa"
+    },
+    "summary": {
+      "total_sent": 50000.00,
+      "total_received": 30000.00,
+      "net_balance_change": -20000.00,
+      "transaction_count": 2
+    },
+    "sent_transactions": [
+      {
+        "transaction_id": 1,
+        "receiver": {
+          "user_id": 2,
+          "user_name": "Sarah Nakato"
+        },
+        "amount": 50000.00,
+        "category": "Money Transfer",
+        "transaction_time": "2025-01-15T10:30:00Z"
+      }
+    ],
+    "received_transactions": [
+      {
+        "transaction_id": 5,
+        "sender": {
+          "user_id": 5,
+          "user_name": "David Okello"
+        },
+        "amount": 30000.00,
+        "category": "Money Transfer",
+        "transaction_time": "2025-01-17T08:30:00Z"
+      }
+    ]
+  }
+]
+
