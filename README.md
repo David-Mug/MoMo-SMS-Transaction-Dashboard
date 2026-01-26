@@ -1,3 +1,12 @@
+Team Excel Sheet - https://docs.google.com/spreadsheets/d/1gd4ohovlVMZiL2MNFqg6Jvo51dRFk4IUx_4-Ghn_Be0/edit?gid=0#gid=0
+
+Progress tracking and task management Trello board: https://trello.com/b/vEybE1aY/momo-transaction-analytics-scrum-board
+
+System design diagrams and technical architecture: https://drive.google.com/file/d/1goYUlZVnnQKxRoBbOAGn26IHWoS1l4j5/view?usp=sharing
+
+Interactive diagram editor: https://app.diagrams.net/#G1goYUlZVnnQKxRoBbOAGn26IHWoS1l4j5
+
+
 # MoMo SMS Financial Insights Platform
 
 ## Overview
@@ -339,15 +348,6 @@ For detailed API endpoint specifications, request/response formats, and data sch
 
 ## Development
 
-### Project Management
-
-Progress tracking and task management: https://trello.com/b/vEybE1aY/momo-transaction-analytics-scrum-board
-
-### Architecture Documentation
-
-System design diagrams and technical architecture: https://drive.google.com/file/d/1goYUlZVnnQKxRoBbOAGn26IHWoS1l4j5/view?usp=sharing
-
-Interactive diagram editor: https://app.diagrams.net/#G1goYUlZVnnQKxRoBbOAGn26IHWoS1l4j5
 
 ### Version Control Workflow
 
