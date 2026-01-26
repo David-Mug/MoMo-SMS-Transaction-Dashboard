@@ -113,4 +113,18 @@ INSERT INTO system_logs (action, timestamp, transaction_id, category_id) VALUES
 ('Airtime Purchase', '2025-01-16 11:45:12', 4, 2),
 ('Transaction Processed', '2025-01-17 08:30:15', 5, 1);
 
+-- Testing basic CRUD operations:
+-- Read
+SELECT * FROM user;
+
+-- Update 
+UPDATE user SET user_phone_number = '*********222' WHERE user_name = 'John Mukasa';  
+SELECT * FROM user WHERE user_name = 'John Mukasa';  -- Verify update
+
+-- Delete 
+DELETE FROM user WHERE user_name = 'David Okello'; 
+-- Should not work because of the restrictions set earlier to maintain data integrity
+SELECT * FROM user WHERE user_name = 'David Okello';  
+
+
 
