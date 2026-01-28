@@ -1,3 +1,11 @@
-[]
+[
+    {
+    "_comment": "A user with their basic info",
+    "user_id": 1,
+    "user_phone_number": "*********567",
+    "user_name": "John Mukasa"
+  },
+]
+
 
 
