@@ -79,7 +79,7 @@ INSERT INTO user (user_phone_number, user_name) VALUES
 ('*********667', 'Sarah Nakato'),
 ('*********157', 'Peter Ochieng'),
 ('*********560', 'Mary Achieng'),
-('*********123', 'David Okello');
+('*********123', 'kabanda gislain');
 
 INSERT INTO transaction_categories (category_type) VALUES
 ('Money Transfer'),
@@ -122,9 +122,10 @@ UPDATE user SET user_phone_number = '*********222' WHERE user_name = 'John Mukas
 SELECT * FROM user WHERE user_name = 'John Mukasa';  -- Verify update
 
 -- Delete 
-DELETE FROM user WHERE user_name = 'David Okello'; 
+DELETE FROM user WHERE user_name = 'kabanda gislain'; 
 -- Should not work because of the restrictions set earlier to maintain data integrity
-SELECT * FROM user WHERE user_name = 'David Okello';  
+SELECT * FROM user WHERE user_name = 'kabanda gislain';  
+
 
 
 
