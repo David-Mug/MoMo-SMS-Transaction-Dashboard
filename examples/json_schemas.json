@@ -27,8 +27,24 @@
   "transaction_id": 1,
   "category_id": 1
 },
-    
+   {
+  "_comment": "User profile with their allowed transaction categories",
+  "user_id": 1,
+  "user_phone_number": "*********567",
+  "user_name": "John Mukasa",
+  "categories": [
+    {
+      "category_id": 1,
+      "category_type": "Money Transfer"
+    },
+    {
+      "category_id": 2,
+      "category_type": "Airtime Purchase"
+    }
+  ]
+}, 
 ]
+
 
 
 
