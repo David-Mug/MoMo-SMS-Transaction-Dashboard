@@ -1,3 +1,11 @@
+-- ============================================
+-- Mobile Money (MoMo) Database Schema
+-- Course: Database Design & Implementation
+-- Description: This database manages users,
+-- transactions, categories, and system logs
+-- for a mobile money system.
+-- ============================================
+
 -- Drop existing database if it exists (for clean setup)
 DROP DATABASE IF EXISTS momo_db;
 CREATE DATABASE momo_db
@@ -125,6 +133,7 @@ SELECT * FROM user WHERE user_name = 'John Mukasa';  -- Verify update
 DELETE FROM user WHERE user_name = 'David Okello'; 
 -- Should not work because of the restrictions set earlier to maintain data integrity
 SELECT * FROM user WHERE user_name = 'David Okello';  
+
 
 
 
