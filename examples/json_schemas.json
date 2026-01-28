@@ -5,7 +5,14 @@
     "user_phone_number": "*********567",
     "user_name": "John Mukasa"
   },
+    {
+    "_comment": "Type of transaction (e.g., Money Transfer)",
+    "category_id": 1,
+    "category_type": "Money Transfer"
+  },
+    
 ]
+
 
 
 
