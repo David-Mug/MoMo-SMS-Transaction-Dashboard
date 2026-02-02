@@ -1,4 +1,4 @@
-Team Excel Sheet - https://docs.google.com/spreadsheets/d/1gd4ohovlVMZiL2MNFqg6Jvo51dRFk4IUx_4-Ghn_Be0/edit?gid=0#gid=0
+Team Excel Sheet -https://docs.google.com/spreadsheets/d/1gd4ohovlVMZiL2MNFqg6Jvo51dRFk4IUx_4-Ghn_Be0/edit?usp=sharing
 
 Progress tracking and task management Trello board: https://trello.com/b/vEybE1aY/momo-transaction-analytics-scrum-board
 
