@@ -1,9 +1,12 @@
 import xml.etree.ElementTree as ET #import an inbuilt python library to parse the data
 import re #import regex library to help us extract necessary attributes from the body of the sms
-
+import os
 def parse_xml(file_path):
 
-    tree = ET.parse("modified_sms_V2.xml")  #Load the xml file and buiild the tree structure
+ # Get the folder where this script (xml_parser.py) lives
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    xml_path = os.path.join(base_dir, "modified_sms_V2.xml")
+    tree = ET.parse(xml_path)  #Load the xml file and buiild the tree structure
     root = tree.getroot()   #access the root element
 
     transactions = []   #create an empty list to store the transaction attributes we need.

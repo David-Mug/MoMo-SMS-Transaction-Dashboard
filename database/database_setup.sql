@@ -74,6 +74,7 @@ CREATE TABLE system_logs (
     INDEX idx_category_log (category_id) COMMENT 'Index for category-related logs'
 ) 
 COMMENT='System logging table for auditing and tracking data processing events';
+
 INSERT INTO user (user_phone_number, user_name) VALUES
 ('*********567', 'John Mukasa'),
 ('*********667', 'Sarah Nakato'),
@@ -125,6 +126,3 @@ SELECT * FROM user WHERE user_name = 'John Mukasa';  -- Verify update
 DELETE FROM user WHERE user_name = 'David Okello'; 
 -- Should not work because of the restrictions set earlier to maintain data integrity
 SELECT * FROM user WHERE user_name = 'David Okello';  
-
-
-
