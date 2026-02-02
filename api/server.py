@@ -1,6 +1,7 @@
 # Import required libraries
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import base64
 import json
 import sys
 import os
@@ -29,7 +30,32 @@ class RequestHandler(BaseHTTPRequestHandler):
         # End the HTTP headers section
         self.end_headers()
 
+    VALID_USERNAME = "group7"
+    VALID_PASSWORD = "EWD"
+
+    def _check_auth(self):
+        auth_header = self.headers.get('Authorization')
+        if auth_header is None or not auth_header.startswith('Basic '):
+            return False
+        
+        # Get Base64 part
+        encoded = auth_header.split(' ')[1]
+        try:
+            decoded = base64.b64decode(encoded).decode('utf-8')  # "username:password"
+        except Exception:
+            return False
+
+        username, password = decoded.split(':')
+        if username == self.VALID_USERNAME and password == self.VALID_PASSWORD:
+            return True
+        return False
+
+
     def do_GET(self):
+        if not self._check_auth():
+            self._set_headers(401)  # Unauthorized
+            self.wfile.write(json.dumps({"error": "Unauthorized"}).encode('utf-8'))
+            return
         try:
             if self.path == "/transactions":
                 self._set_headers(200)
@@ -63,6 +89,10 @@ class RequestHandler(BaseHTTPRequestHandler):
     
     # Handle POST requests to add new transactions
     def do_POST(self):
+        if not self._check_auth():
+            self._set_headers(401)  # Unauthorized
+            self.wfile.write(json.dumps({"error": "Unauthorized"}).encode('utf-8'))
+            return
         # Check if the URL is correct
         if self.path != "/transactions":
             self._set_headers(404)
@@ -119,6 +149,12 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps({"error": "Internal Server Error", "details": str(e)}).encode('utf-8'))
     
     def do_PUT(self):
+        #adding auth
+        if not self._check_auth():
+            self._set_headers(401)  # Unauthorized
+            self.wfile.write(json.dumps({"error": "Unauthorized"}).encode('utf-8'))
+            return
+        
         if not self.path.startswith("/transactions/"):
             self._set_headers(404)
             self.wfile.write(json.dumps({"error": "Not found"}).encode('utf-8'))
@@ -152,6 +188,12 @@ class RequestHandler(BaseHTTPRequestHandler):
 
     # Handle DELETE requests according to the id provided.
     def do_DELETE(self):
+        #adding auth
+        if not self._check_auth():
+            self._set_headers(401)  # Unauthorized
+            self.wfile.write(json.dumps({"error": "Unauthorized"}).encode('utf-8'))
+            return
+
         if not self.path.startswith("/transactions/"):
             self._set_headers(404)
             self.wfile.write(json.dumps({"error": "Not found"}).encode('utf-8'))
