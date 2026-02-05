@@ -83,8 +83,7 @@ if __name__ == "__main__":
 
     linear_time, dict_time = compare_search_performance(transactions)
 
-    print("DSA SEARCH PERFORMANCE COMPARISON")
-    print("--------------------------------")
+    print("DSA SEARCH PERFORMANCE COMPARISON\n")
     print(f"Number of transactions tested: {len(transactions)}")
     print(f"Average Linear Search Time: {linear_time:.8f} seconds")
     print(f"Average Dictionary Lookup Time: {dict_time:.8f} seconds")

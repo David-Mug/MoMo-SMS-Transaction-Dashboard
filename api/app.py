@@ -197,7 +197,7 @@ class RequestHandler(BaseHTTPRequestHandler):
 
             # Respond to client
             self._set_headers(201)  # Created
-            self.wfile.write(json.dumps({"message": f"Transaction created successfully! Transaction id is{new_id}"}).encode('utf-8')+ b"\n")
+            self.wfile.write(json.dumps({"message": f"Transaction created successfully! Transaction id is {new_id}"}).encode('utf-8')+ b"\n")
 
         except json.JSONDecodeError:
             # Invalid JSON from client
