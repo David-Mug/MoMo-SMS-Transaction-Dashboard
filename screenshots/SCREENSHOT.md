@@ -1,102 +1,114 @@
 # Screenshots Documentation
 
 ## Overview
-This folder contains 19 screenshots documenting the REST API implementation, testing, and DSA algorithm comparison.
+This folder contains 12 screenshots documenting the REST API implementation and testing of the MoMo SMS Financial Insights Platform.
 
 ## Screenshots List
 
-### API Testing Screenshots
+### Screenshot 1: API Server Startup (08:59:19)
+**File:** `Screenshot 2026-02-05 085919.png`
+- Shows the API server startup process
+- Displays initial configuration and port binding
+- Shows authentication setup (Basic Auth with admin/admin123)
+- Indicates transaction data loading from XML file
 
-1. **Screenshot (296).png** - API Server Startup
-   - Shows server running on localhost:9000
-   - Displays loaded transaction count (1682)
-   - Authentication method (Basic Auth)
-   - Available endpoints
+### Screenshot 2: GET /transactions Request (08:59:41)
+**File:** `Screenshot 2026-02-05 085941.png`
+- Demonstrates GET request to `/transactions` endpoint
+- Shows Authorization header with Base64-encoded credentials
+- Server listening on localhost:8000
+- Returns array of all transactions
 
-2. **Screenshot (297).png** - GET /transactions (All Transactions)
-   - Endpoint: GET http://localhost:9000/transactions
-   - Response: Count of all transactions
-   - Data: Array of all transaction objects
-   - Status: 200 OK
+### Screenshot 3: Single Transaction GET (09:01:45)
+**File:** `Screenshot 2026-02-05 090145.png`
+- Shows GET request to `/transactions/{id}` endpoint
+- Retrieves a specific transaction by ID
+- Response includes transaction_type, amount, sender, receiver, and readable_date
+- Status: 200 OK
 
-3. **Screenshot (298).png** - GET /transactions/1 (Single Transaction)
-   - Endpoint: GET http://localhost:9000/transactions/1
-   - Response: Transaction ID 1 details
-   - Fields: id, transaction_type, amount, sender, receiver, timestamp
-   - Status: 200 OK
+### Screenshot 4: Create Transaction POST (09:10:47)
+**File:** `Screenshot 2026-02-05 091047.png`
+- Demonstrates POST request to create a new transaction
+- Request body includes: transaction_type, amount, sender, receiver, readable_date
+- Shows validation of required fields
+- Response: 201 Created with success message
 
-4. **Screenshot (299).png** - GET /transactions/2 (Single Transaction)
-   - Endpoint: GET http://localhost:9000/transactions/2
-   - Similar structure to Screenshot 298
-   - Different transaction data
+### Screenshot 5: Update Transaction PUT (09:25:20)
+**File:** `Screenshot 2026-02-05 092520.png`
+- Shows PUT request to update an existing transaction
+- Updates specific fields (e.g., amount, receiver)
+- Validates transaction type constraints
+- Response: 200 OK with updated transaction object
 
-5. **Screenshot (300).png** - POST /transactions (Create New)
-   - Endpoint: POST http://localhost:9000/transactions
-   - Request: New transaction with required fields
-   - Response: Created transaction with auto-generated ID
-   - Status: 201 Created
+### Screenshot 6: Delete Transaction DELETE (09:26:27)
+**File:** `Screenshot 2026-02-05 092627.png`
+- Demonstrates DELETE request to remove a transaction
+- Endpoint: `/transactions/{id}`
+- Response: 204 No Content (successful deletion)
+- Confirms transaction removal from database
 
-6. **Screenshot (301).png** - POST /transactions (Create Another)
-   - Second creation example
-   - Shows new ID generation (incrementing)
-   - Confirms POST functionality
+### Screenshot 7: Transaction Type Validation (09:27:53)
+**File:** `Screenshot 2026-02-05 092753.png`
+- Shows validation for different transaction types
+- Tests 'payment' type: sender must be null, receiver required
+- Tests 'received' type: receiver must be null, sender required
+- Tests 'deposit' type: both sender and receiver must be null
+- Returns 400 Bad Request for invalid combinations
 
-7. **Screenshot (302).png** - PUT /transactions/1 (Update)
-   - Endpoint: PUT http://localhost:9000/transactions/1
-   - Request: Updated amount or fields
-   - Response: Updated transaction object
-   - Status: 200 OK
+### Screenshot 8: Amount Field Validation (09:30:51)
+**File:** `Screenshot 2026-02-05 093051.png`
+- Demonstrates validation of the amount field
+- Shows error when amount is not a number
+- Shows error when required amount field is missing
+- Response: 400 Bad Request with error message
 
-8. **Screenshot (303).png** - PUT /transactions/5 (Update Another)
-   - Updates transaction ID 5
-   - Confirms PUT endpoint works on different records
+### Screenshot 9: Missing Required Fields (09:33:52)
+**File:** `Screenshot 2026-02-05 093352.png`
+- Shows error handling for missing required fields
+- Tests missing transaction_type, sender, receiver, and readable_date
+- Response: 400 Bad Request
+- Error message: "Missing field: {field_name}"
 
-9. **Screenshot (304).png** - DELETE /transactions/10
-   - Endpoint: DELETE http://localhost:9000/transactions/10
-   - Response: Deleted transaction data
-   - Confirms deletion successful
-   - Status: 200 OK
+### Screenshot 10: Authentication Failure - No Auth (09:56:18)
+**File:** `Screenshot 2026-02-05 095618.png`
+- Shows request without Authorization header
+- Endpoint attempts: GET /transactions without auth
+- Response: 401 Unauthorized
+- Error: "Unauthorized"
 
-10. **Screenshot (305).png** - DELETE /transactions/15
-    - Another deletion example
-    - Removes transaction ID 15
+### Screenshot 11: Authentication Failure - Invalid Credentials (10:48:03)
+**File:** `Screenshot 2026-02-05 104803.png`
+- Shows request with invalid Basic Auth credentials
+- Wrong username or password in Base64 encoding
+- Response: 401 Unauthorized
+- Demonstrates authentication enforcement
 
-11. **Screenshot (306).png** - GET /transactions/1 (After Updates)
-    - Verifies transaction still exists
-    - Shows updated values
+### Screenshot 12: Transaction ID Not Found (11:11:10)
+**File:** `Screenshot 2026-02-05 111110.png`
+- Shows GET request for non-existent transaction ID
+- Endpoint: `/transactions/{invalid_id}`
+- Response: 404 Not Found
+- Error: "Transaction not found"
 
-12. **Screenshot (307).png** - GET /transactions (After CRUD Operations)
-    - Shows updated transaction count
-    - Reflects creates, updates, and deletes
+---
 
-### Authentication Testing Screenshots
+## Test Coverage Summary
 
-13. **Screenshot (308).png** - Missing Authorization Header
-    - Request: GET /transactions (no auth header)
-    - Response: 401 Unauthorized
-    - Message: "Missing Authorization header"
+The 12 screenshots cover:
+- **CRUD Operations (4 screenshots):** GET, POST, PUT, DELETE
+- **Data Validation (4 screenshots):** Type validation, field validation, amount validation, required fields
+- **Error Handling (3 screenshots):** Authentication failures, 404 errors
+- **Server Setup (1 screenshot):** API startup and configuration
 
-14. **Screenshot (309).png** - Invalid Authorization Header
-    - Request: Invalid Base64 or credentials
-    - Response: 401 Unauthorized
-    - Message: "Invalid Authorization header"
+## Key Features Demonstrated
 
-15. **Screenshot (310).png** - Wrong Username/Password
-    - Request: Basic Auth with incorrect credentials
-    - Response: 401 Unauthorized
-    - Message: "Invalid credentials"
-
-16. **Screenshot (311).png** - Malformed Authorization
-    - Request: Malformed auth header
-    - Response: 401 Unauthorized
-
-### DSA Algorithm Comparison Screenshots
-
-17. **Screenshot (312).png** - DSA Benchmark Start
-    - Shows benchmark setup
-    - Dataset: 1682 transactions
-    - Test IDs: 1-20
-    - Iterations: 100 per ID
+✅ Basic Authentication enforcement
+✅ Transaction type validation rules
+✅ Required field validation
+✅ Error responses with appropriate HTTP status codes
+✅ CRUD operations on transactions
+✅ In-memory data storage
+✅ JSON request/response format
 
 18. **Screenshot (313).png** - Linear Search Results
     - O(n) algorithm performance
